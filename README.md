@@ -1,14 +1,16 @@
 # DriveGuardian
 Insert blurb here
 ## Components
-* 3x [Pressure Sensors](https://www.amazon.com/SENSING-RESISTOR-SQUARE-1oz-22LBS-SPACING/dp/B00B887DBC/)
-* 1x [Piezo Sensor](https://www.amazon.com/MakerHawk-Analog-Ceramic-Vibration-Arduino/dp/B07KS5NV4V)
-* 1x [Servo](https://www.amazon.com/Micro-Helicopter-Airplane-Remote-Control/dp/B072V529YD)
-* 1x Arduino Nano (Any ATMega328-based Arduino should work)
-* 1x NodeMCU
-* 3x 10k Ohm Resistors
-* 6x AA Battery Holder
-* 6x AA Batteries
+* 3x [Pressure Sensors](https://www.amazon.com/SENSING-RESISTOR-SQUARE-1oz-22LBS-SPACING/dp/B00B887DBC/) ($15.53 each; $46.59 total)
+* 1x [Piezo Sensor](https://www.amazon.com/MakerHawk-Analog-Ceramic-Vibration-Arduino/dp/B07KS5NV4V) ($1.50)
+* 1x [Servo](https://www.amazon.com/Micro-Helicopter-Airplane-Remote-Control/dp/B072V529YD) ($1.88)
+* 1x Arduino Nano (Any ATMega328-based Arduino should work) ($5.75)
+* 1x NodeMCU ($7.99)
+* 3x 10k Ohm Resistors ($0.03)
+* 6x AA Battery Holder ($2.99)
+* 6x AA Batteries 
+
+**Total Price: $66.73**
 
 ## Circuit Setup
 ![DriveGuardian](https://user-images.githubusercontent.com/104529664/235731490-873c727c-a60f-4a93-a61c-69f150ae1ba0.png)
