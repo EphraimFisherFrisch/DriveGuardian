@@ -37,10 +37,12 @@ The Arduino Nano should be wired to the NodeMCU as follows:
 The following libraries must be installed for the Arduino Nano:
 * `Servo.h`
 
-![DriveGuardian Nano Flowchart](https://user-images.githubusercontent.com/104529664/236482926-8f0c8de0-a118-4337-a2d6-a8153d842bee.png)
+![DriveGuardian Nano Flowchart](https://user-images.githubusercontent.com/104529664/236548992-43ea7e50-f01b-461d-93e6-13767b1665e2.png)
 
 ### NodeMCU
 The following libraries must be installed for the NodeMCU:
 * `ESP8266WiFi.h`
 * `BlynkSimpleEsp8266.h`
 * `ezTime.h`
+
+![DriveGuardian NodeMCU Flowchart](https://user-images.githubusercontent.com/104529664/236552797-91f1a839-60a0-4c5c-8581-85fd8defebe7.png)
