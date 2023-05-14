@@ -1,6 +1,7 @@
-#define BLYNK_TEMPLATE_ID           "TMPLcFCd6rvo"
-#define BLYNK_TEMPLATE_NAME         "DriveGuardian"
-#define BLYNK_AUTH_TOKEN            "pfhjRGldoeS36w5NO_e4kSj5G5e_HG4p"
+// Insert Blynk information here
+#define BLYNK_TEMPLATE_ID           ""
+#define BLYNK_TEMPLATE_NAME         ""
+#define BLYNK_AUTH_TOKEN            ""
 #define BLYNK_PRINT Serial
 
 #include <ESP8266WiFi.h>
@@ -15,8 +16,8 @@
 
 //#define DG_DB // Uncomment this line to enable Serial prints for debugging
 
-char ssid[] = "iPhoneEphraim";
-char pass[] = "ephraimhotspot";
+char ssid[] = ""; // Insert WiFi network here
+char pass[] = ""; // Insert WiFi password here
 
 BlynkTimer timer;
 Timezone timeObject;
