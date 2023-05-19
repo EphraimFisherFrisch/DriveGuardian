@@ -43,6 +43,36 @@ The following is a programming flowchart for the Arduino Nano code:
 
 ![DriveGuardian Nano Flowchart](https://user-images.githubusercontent.com/104529664/236548992-43ea7e50-f01b-461d-93e6-13767b1665e2.png)
 
+The following is a pseudocode demonstration of the Arduino Nano code:
+
+```
+Pressure Sensor One Input is A0
+Pressure Sensor Two Input is A1
+Pressure Sensor Three Input is A2
+Piezo Sensor Input is A3
+Configure servo on D5
+
+Servo Data Line is D2
+Pressure Sensor One Data Line is D8
+Pressure Sensor Two Data Line is D9
+Pressure Sensor Three Data Line is D10
+Piezo Sensor Data Line is D11
+
+Do once for setup:
+  Configure all data lines except for the servo data line as output pins
+  Configure the servo data line as an input pin
+  Write initial LOW values to all data lines
+  Set up the servo data line as an interrupt to trigger the following whenever it changes status:
+    If the data line is high:
+      Close the servo
+    Else:
+      Open the servo
+
+Constantly loop through the following:
+  Read pressure sensors and piezo sensor and update data lines accordingly
+  Wait 20 ms
+```
+
 ### NodeMCU
 The following libraries must be installed for the NodeMCU:
 * `ESP8266WiFi.h`
@@ -52,3 +82,33 @@ The following libraries must be installed for the NodeMCU:
 The following is a programming flowchart for the NodeMCU code:
 
 ![DriveGuardian NodeMCU Flowchart](https://github.com/EphraimFisherFrisch/DriveGuardian/assets/104529664/4c36c211-d6ec-4db9-901e-8222d9908b89)
+
+The following is a pseudocode demonstration of the NodeMCU code:
+```
+Pressure Sensor One Data Line is D1
+Pressure Sensor Two Data Line is D2
+Pressure Sensor Three Data Line is D3
+Piezo Sensor Data Line is D5
+Servo Data Line is D6
+
+Do once for setup:
+  Configure all data lines except for the servo data line as input pins
+  Configure servo data line as an output pin
+  Connect to the Blynk servers
+  
+Do every second:
+  Read data lines and update status of pressure sensors and piezo sensors on Blynk
+  If DriveGuardian is in override mode:
+    Set the servo data line to low
+  Otherwise, if DriveGuardian is in lock mode:
+    Set the servo data line to high if the piezo sensor is low, otherwise set it to low
+  Otherwise, if it is past curfews imposed by law (11PM-5AM):
+    Set the servo data line to high if the piezo sensor is low, otherwise set it to low
+  Otherwise, if two or more pressure sensors are high:
+    Set the servo data line to high if the piezo sensor is low, otherwise set it to low
+  Otherwise, if a custom curfew is enabled:
+    If it is during a time when the custom curfew would bar driving:
+      Set the servo data line to high if the piezo sensor is low, otherwise set it to low
+  If none of the above conditions are met:
+    Set the servo data line to low
+```
