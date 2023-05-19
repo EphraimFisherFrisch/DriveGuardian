@@ -11,8 +11,8 @@
 
 #define SERVO_INTERRUPT_PIN 2
 #define SERVO_PIN 5
-#define SERVO_CLOSE_VALUE 0
-#define SERVO_OPEN_VALUE 115
+#define SERVO_CLOSE_VALUE 10
+#define SERVO_OPEN_VALUE 120
 
 //#define DG_DB // Uncomment this line to enable Serial prints for debugging
 
