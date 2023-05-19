@@ -77,8 +77,7 @@ bool servoStatus() {
       return !digitalRead(PIEZO_IN);
     } else if (digitalRead(SEAT_ONE_IN) + digitalRead(SEAT_TWO_IN) + digitalRead(SEAT_THREE_IN) > 1) {
       return !digitalRead(PIEZO_IN);
-    }
-    if (customCurfew) {
+    } else if (customCurfew) {
       if ((timeObject.hour() < ccStartHour || (timeObject.hour() == ccStartHour && timeObject.minute() < ccStartMinute)) || (timeObject.hour() > ccStopHour) || (timeObject.hour() == ccStopHour && timeObject.minute() >= ccStopMinute)) {
         return !digitalRead(PIEZO_IN);
       }
