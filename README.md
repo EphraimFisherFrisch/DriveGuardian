@@ -10,7 +10,7 @@ Insert blurb here
 * 6x AA Battery Holder ($2.99)
 * 6x AA Batteries 
 
-**Total Price: $66.73**
+**Total Cost: $66.73**
 
 ## Circuit Setup
 ![DriveGuardian](https://user-images.githubusercontent.com/104529664/235731490-873c727c-a60f-4a93-a61c-69f150ae1ba0.png)
