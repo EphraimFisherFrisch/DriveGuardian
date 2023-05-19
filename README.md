@@ -51,4 +51,4 @@ The following libraries must be installed for the NodeMCU:
 
 The following is a programming flowchart for the NodeMCU code:
 
-![DriveGuardian NodeMCU Flowchart](https://user-images.githubusercontent.com/104529664/236552797-91f1a839-60a0-4c5c-8581-85fd8defebe7.png)
+![DriveGuardian NodeMCU Flowchart](https://github.com/EphraimFisherFrisch/DriveGuardian/assets/104529664/4c36c211-d6ec-4db9-901e-8222d9908b89)
