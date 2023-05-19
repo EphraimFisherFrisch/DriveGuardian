@@ -1,7 +1,6 @@
-// Insert Blynk information here
-#define BLYNK_TEMPLATE_ID           ""
-#define BLYNK_TEMPLATE_NAME         ""
-#define BLYNK_AUTH_TOKEN            ""
+#define BLYNK_TEMPLATE_ID           "TMPLcFCd6rvo"
+#define BLYNK_TEMPLATE_NAME         "DriveGuardian"
+#define BLYNK_AUTH_TOKEN            "pfhjRGldoeS36w5NO_e4kSj5G5e_HG4p"
 #define BLYNK_PRINT Serial
 
 #include <ESP8266WiFi.h>
@@ -16,17 +15,24 @@
 
 //#define DG_DB // Uncomment this line to enable Serial prints for debugging
 
-char ssid[] = ""; // Insert WiFi network here
-char pass[] = ""; // Insert WiFi password here
+char ssid[] = "iPhoneEphraim";
+char pass[] = "ephraimhotspot";
 
 BlynkTimer timer;
 Timezone timeObject;
-int settingStatus;
+char settingStatus;
+
+bool customCurfew;
+char ccStartHour;
+char ccStartMinute;
+char ccStopHour;
+char ccStopMinute;
 
 // Called when connected to the Blynk server
 BLYNK_CONNECTED() {
   // Get the current UTC time
   Blynk.sendInternal("utc", "time");
+  Blynk.syncAll();
 }
 
 BLYNK_WRITE(InternalPinUTC) {
@@ -45,6 +51,21 @@ BLYNK_WRITE(V0) {
   settingStatus = param.asInt();
 }
 
+// Update custom curfew and timezone when modified
+BLYNK_WRITE(V2) {
+  TimeInputParam t(param);
+
+  ccStartHour = t.getStartHour();
+  ccStartMinute = t.getStartMinute();
+  ccStopHour = t.getStopHour();
+  ccStopMinute = t.getStopMinute();
+  timeObject.setLocation(t.getTZ());
+}
+
+BLYNK_WRITE(V3) {
+  customCurfew = param.asInt();
+}
+
 bool servoStatus() {
   // If in override mode, keep the servo open
   if (settingStatus == 2) {
@@ -56,6 +77,11 @@ bool servoStatus() {
       return !digitalRead(PIEZO_IN);
     } else if (digitalRead(SEAT_ONE_IN) + digitalRead(SEAT_TWO_IN) + digitalRead(SEAT_THREE_IN) > 1) {
       return !digitalRead(PIEZO_IN);
+    }
+    if (customCurfew) {
+      if ((timeObject.hour() < ccStartHour || (timeObject.hour() == ccStartHour && timeObject.minute() < ccStartMinute)) || (timeObject.hour() > ccStopHour) || (timeObject.hour() == ccStopHour && timeObject.minute() >= ccStopMinute)) {
+        return !digitalRead(PIEZO_IN);
+      }
     }
     return false;
   }
@@ -81,6 +107,9 @@ void everySecond() {
 
   // Send instruction to Nano to open or close servo
   digitalWrite(SERVO_STATUS_OUT, servoStatus());
+  #ifdef DG_DB
+  Serial.println("Servo status: " + String(servoStatus()));
+  #endif
 }
 
 void setup() {
@@ -106,10 +135,6 @@ void setup() {
 
   // Set up time zone
   timeObject.setLocation("America/New_York");
-
-  // Reset settings to normal mode instead of override or lock
-  Blynk.virtualWrite(V0, 1);
-  settingStatus = 1;
 }
 
 void loop() {
