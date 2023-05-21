@@ -1,5 +1,6 @@
 # DriveGuardian
-Insert blurb here
+The DriveGuardian is a device created by 3 high-school sophomores, Brian Jackson, Ephraim Fisher, and Natan Dov Segal. The purpose of the device is to keep teenage drivers and their passengers safe by not allowing them to violate teen driving laws.
+
 ## Components
 * 3x [Pressure Sensors](https://www.amazon.com/SENSING-RESISTOR-SQUARE-1oz-22LBS-SPACING/dp/B00B887DBC/) ($15.53 each; $46.59 total)
 * 1x [Piezo Sensor](https://www.amazon.com/MakerHawk-Analog-Ceramic-Vibration-Arduino/dp/B07KS5NV4V) ($1.50)
