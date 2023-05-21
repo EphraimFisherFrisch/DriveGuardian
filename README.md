@@ -1,6 +1,10 @@
 # Drive Guardian
 The Drive Guardian is a device created by 3 high-school sophomores, Brian Jackson, Ephraim Fisher, and Natan Dov Segal. The purpose of the device is to keep teenage drivers and their passengers safe by not allowing them to violate teen driving laws.
 
+## Iterations
+
+Originally, our first sketch of our prototype included a CO<sub>2</sub> detector in order to detect when the engine was on or off. When we originally showed our idea to Adam Jerozolim, our CIJE mentor, he suggested that we use a piezo sensor instead to detect whether on not the engine was on. We orginally tried to use a single 9V battery instead of a 6x AA battery pack, but we realized that that did not produce enough current. Also, we had originally developed the project on an Arduino Uno instead of a Nano, but we changed this to a Nano in order to save space.
+
 ## Components
 * 3x [Pressure Sensors](https://www.amazon.com/SENSING-RESISTOR-SQUARE-1oz-22LBS-SPACING/dp/B00B887DBC/) ($15.53 each; $46.59 total)
 * 1x [Piezo Sensor](https://www.amazon.com/MakerHawk-Analog-Ceramic-Vibration-Arduino/dp/B07KS5NV4V) ($1.50)
@@ -8,7 +12,7 @@ The Drive Guardian is a device created by 3 high-school sophomores, Brian Jackso
 * 1x Arduino Nano (Any ATMega328-based Arduino should work) ($5.75)
 * 1x NodeMCU ($7.99)
 * 3x 10k Ohm Resistors ($0.03)
-* 6x AA Battery Holder ($2.99)
+* 6x AA Battery Pack ($2.99)
 * 6x AA Batteries 
 
 **Total Cost: $66.73**
