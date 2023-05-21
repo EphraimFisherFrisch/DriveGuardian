@@ -62,7 +62,7 @@ Piezo Sensor Data Line is D11
 Do once for setup:
   Configure all data lines except for the servo data line as output pins
   Configure the servo data line as an input pin
-  Write initial LOW values to all data lines
+  Write initial low values to all data lines
   Set up the servo data line as an interrupt to trigger the following whenever it changes status:
     If the data line is high:
       Close the servo
